@@ -1,6 +1,8 @@
 import { useState } from "react";
 import clockImg from "./assets/clock.png";
 import resetImg from "./assets/reset.png";
+import plusImg from "./assets/plus.png";
+import minusImg from "./assets/minus.png";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,9 +38,9 @@ function App() {
           <div className="flex flex-col text-center gap-7">
             <label className="select-none"># Sets Complete</label>
             <div className="flex gap-5 justify-center">
-              <button className="select-none">-</button>
+              <img src={minusImg} className="w-5 h-5 select-none"></img>
               <label className="select-none">0</label>
-              <button className="select-none">+</button>
+              <img src={plusImg} className="w-5 h-5 select-none"></img>
             </div>
           </div>
         </div>
