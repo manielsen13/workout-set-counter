@@ -1,4 +1,4 @@
-import { Timer } from "./Timer";
+import { Timer } from "../Timer/Timer";
 import { NamesColumn } from "./NamesColumn";
 import { NumSetsColumn } from "./NumSetsColumn";
 
@@ -18,7 +18,9 @@ export function HomeScreen({
       >
         Options
       </button>
-      <Timer startingTime={startingTime} />
+      <div className="flex flex-col justify-center mt-24 items-center gap-5">
+        <Timer startingTime={startingTime} />
+      </div>
       <>
         <div className="flex justify-around mt-20">
           <NamesColumn exercises={exercises} />

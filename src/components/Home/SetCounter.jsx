@@ -1,5 +1,5 @@
-import minusImg from "../assets/minus.png";
-import plusImg from "../assets/plus.png";
+import minusImg from "../../assets/minus.png";
+import plusImg from "../../assets/plus.png";
 
 export function SetCounter({ exercise, incrementNumSets, decrementNumSets }) {
   const handleIncreaseSetsButtonPressed = () => {

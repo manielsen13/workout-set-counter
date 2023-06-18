@@ -1,6 +1,6 @@
-import minusImg from "../assets/minus.png";
-import plusImg from "../assets/plus.png";
-import { TimeDisplay } from "./TimeDisplay";
+import minusImg from "../../assets/minus.png";
+import plusImg from "../../assets/plus.png";
+import { TimeDisplay } from "../Timer/TimeDisplay";
 
 export function TimerSettings({ startingTime, setStartingTime }) {
   const handleIncreaseStartingTime = () => {

@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import workouts from "./data/workouts.json";
-import { PresetWorkoutOptionsButtons } from "./components/PresetWorkoutOptionsButtons.jsx";
-import { OptionsMenu } from "./components/OptionsMenu";
-import { HomeScreen } from "./components/HomeScreen";
+import { PresetWorkoutOptionsButtons } from "./components/Options/PresetWorkoutOptionsButtons.jsx";
+import { OptionsMenu } from "./components/Options/OptionsMenu";
+import { HomeScreen } from "./components/Home/HomeScreen";
 
 function App() {
   const [exercises, setExercises] = useState([]);
   const [screen, setScreen] = useState("Home");
   const [startingTime, setStartingTime] = useState(1200);
-
-  console.log(screen);
 
   const incrementNumSets = (exerciseId) => {
     setExercises(
