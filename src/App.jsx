@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import workouts from "./data/workouts.json";
-import { PresetWorkoutOptionsButtons } from "./components/Options/PresetWorkoutOptionsButtons.jsx";
+import { PresetWorkoutOptionsButtons } from "./components/PresetWorkoutOptionsButtons.jsx";
 import { OptionsMenu } from "./components/Options/OptionsMenu";
 import { HomeScreen } from "./components/Home/HomeScreen";
 

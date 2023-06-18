@@ -1,4 +1,4 @@
-import workouts from "../../data/workouts.json";
+import workouts from "../data/workouts.json";
 
 export function PresetWorkoutOptionsButtons({ buildWorkout }) {
   return (
