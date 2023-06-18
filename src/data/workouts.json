@@ -1,0 +1,32 @@
+{
+  "Push": [
+    "DB Press",
+    "Shoulder Press",
+    "Front/Lateral Raises",
+    "Chest Flies",
+    "Tricep Variation"
+  ],
+  "Pull": [
+    "Lat Pulldowns",
+    "DB Rows",
+    "Shrugs",
+    "Face Pulls",
+    "Bicep Variation"
+  ],
+  "Full Body #1": ["Incline Bench", "DB Rows", "Leg Raises", "Goblet Squats"],
+  "Full Body #2": ["Shoulder Press", "Lat Pulldowns", "Pallof Press", "Lunges"],
+  "Legs": [
+    "Goblet Squats",
+    "Hamstring Curls",
+    "Quad Extensions",
+    "Calf Raises",
+    "Hip Variation"
+  ],
+  "Core": [
+    "V-Sits",
+    "Leg Raises",
+    "Windshield Wipers",
+    "Pallof Press",
+    "Hanging K2C"
+  ]
+}
