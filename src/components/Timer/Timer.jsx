@@ -1,5 +1,5 @@
 import { TimeDisplay } from "./TimeDisplay";
-import clockImg from "../../assets/clock.png";
+
 import resetImg from "../../assets/reset.png";
 
 import { useEffect, useState } from "react";
@@ -32,8 +32,6 @@ export function Timer({ startingTime }) {
 
   return (
     <>
-      <img src={clockImg} className="w-5 h-auto select-none"></img>
-
       <div className="flex relative">
         <TimeDisplay time={currentTime} />
 
