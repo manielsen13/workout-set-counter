@@ -62,7 +62,7 @@ export function Timer() {
             Stop
           </button>
         )}
-        {currentTime === 0 && <label>Time's up!</label>}
+        {currentTime === 0 && <p>Time's up!</p>}
       </div>
     </>
   );

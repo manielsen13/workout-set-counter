@@ -14,6 +14,6 @@ export function TimeDisplay({ currentTime }) {
   };
 
   return (
-    <label className="select-none">{`${getMinutes()}:${getTwoDigitSeconds()}`}</label>
+    <p className="select-none">{`${getMinutes()}:${getTwoDigitSeconds()}`}</p>
   );
 }
