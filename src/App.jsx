@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { Timer } from "./components/Timer";
-import { NamesColumn } from "./components/NamesColumn";
-import { NumSetsColumn } from "./components/NumSetsColumn";
 import workouts from "./data/workouts.json";
 import { PresetWorkoutOptionsButtons } from "./components/PresetWorkoutOptionsButtons.jsx";
+import { OptionsMenu } from "./components/OptionsMenu";
+import { HomeScreen } from "./components/HomeScreen";
 
 function App() {
-  const [exercises, setExercises] = useState([
-    { name: "DB Press", numSets: 1, id: crypto.randomUUID() },
-  ]);
+  const [exercises, setExercises] = useState([]);
+  const [screen, setScreen] = useState("Home");
+
+  console.log(screen);
 
   const incrementNumSets = (exerciseId) => {
     setExercises(
@@ -45,20 +45,15 @@ function App() {
 
   return (
     <>
-      <button className="absolute select-none right-7 top-5">Options</button>
-
-      <Timer />
-
-      <>
-        <div className="flex justify-around mt-20">
-          <NamesColumn exercises={exercises} />
-          <NumSetsColumn
-            exercises={exercises}
-            incrementNumSets={incrementNumSets}
-            decrementNumSets={decrementNumSets}
-          />
-        </div>
-      </>
+      {screen === "Home" && (
+        <HomeScreen
+          exercises={exercises}
+          incrementNumSets={incrementNumSets}
+          decrementNumSets={decrementNumSets}
+          setScreen={setScreen}
+        />
+      )}
+      {screen === "Options" && <OptionsMenu setScreen={setScreen} />}
     </>
   );
 }
