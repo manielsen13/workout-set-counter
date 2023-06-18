@@ -1,8 +1,8 @@
-import workouts from "../data/workouts.json";
+import workouts from "../../data/workouts.json";
 
 export function PresetWorkoutOptionsButtons({ buildWorkout }) {
   return (
-    <ul className="flex flex-wrap gap-10 ">
+    <ul className="flex flex-wrap gap-x-10 gap-y-5 justify-center">
       {Object.keys(workouts).map((workoutName) => {
         return (
           <li key={crypto.randomUUID()}>

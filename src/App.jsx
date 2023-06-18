@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import workouts from "./data/workouts.json";
-import { PresetWorkoutOptionsButtons } from "./components/PresetWorkoutOptionsButtons.jsx";
+import { PresetWorkoutOptionsButtons } from "./components/Displays/PresetWorkoutOptionsButtons.jsx";
 import { OptionsMenu } from "./components/Options/OptionsMenu";
 import { HomeScreen } from "./components/Home/HomeScreen";
 
@@ -51,6 +51,7 @@ function App() {
           decrementNumSets={decrementNumSets}
           setScreen={setScreen}
           startingTime={startingTime}
+          buildWorkout={buildWorkout}
         />
       )}
       {screen === "Options" && (
