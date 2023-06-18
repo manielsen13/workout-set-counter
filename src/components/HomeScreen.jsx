@@ -7,6 +7,7 @@ export function HomeScreen({
   incrementNumSets,
   decrementNumSets,
   setScreen,
+  startingTime,
 }) {
   return (
     <>
@@ -17,7 +18,7 @@ export function HomeScreen({
       >
         Options
       </button>
-      <Timer />
+      <Timer startingTime={startingTime} />
       <>
         <div className="flex justify-around mt-20">
           <NamesColumn exercises={exercises} />

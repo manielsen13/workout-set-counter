@@ -1,8 +1,8 @@
-export function TimeDisplay({ currentTime }) {
+export function TimeDisplay({ time }) {
   //Current time is given in tenths of a second for greater precision
 
   const getTwoDigitSeconds = () => {
-    const seconds = Math.ceil(currentTime / 10) % 60;
+    const seconds = Math.ceil(time / 10) % 60;
     const twoDigitSeconds = seconds.toLocaleString("en-US", {
       minimumIntegerDigits: 2,
       useGrouping: false,
@@ -11,7 +11,7 @@ export function TimeDisplay({ currentTime }) {
   };
 
   const getMinutes = () => {
-    const minutes = Math.floor(Math.ceil(currentTime / 10) / 60);
+    const minutes = Math.floor(Math.ceil(time / 10) / 60);
     return minutes;
   };
 

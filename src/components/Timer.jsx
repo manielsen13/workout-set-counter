@@ -4,8 +4,7 @@ import resetImg from "../assets/reset.png";
 import { useEffect, useState } from "react";
 
 //time is given in tenths of a second, so the timer is more precise
-export function Timer() {
-  const [startingTime, setStartingTime] = useState(120);
+export function Timer({ startingTime }) {
   const [currentTime, setCurrentTime] = useState(startingTime);
   const [isRunning, setIsRunning] = useState(false);
 
@@ -36,7 +35,7 @@ export function Timer() {
         <img src={clockImg} className="w-5 h-auto mt-24 select-none"></img>
 
         <div className="flex relative">
-          <TimeDisplay currentTime={currentTime} />
+          <TimeDisplay time={currentTime} />
 
           {isRunning === false && currentTime !== startingTime && (
             <img

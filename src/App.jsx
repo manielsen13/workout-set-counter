@@ -7,6 +7,7 @@ import { HomeScreen } from "./components/HomeScreen";
 function App() {
   const [exercises, setExercises] = useState([]);
   const [screen, setScreen] = useState("Home");
+  const [startingTime, setStartingTime] = useState(1200);
 
   console.log(screen);
 
@@ -51,9 +52,16 @@ function App() {
           incrementNumSets={incrementNumSets}
           decrementNumSets={decrementNumSets}
           setScreen={setScreen}
+          startingTime={startingTime}
         />
       )}
-      {screen === "Options" && <OptionsMenu setScreen={setScreen} />}
+      {screen === "Options" && (
+        <OptionsMenu
+          setScreen={setScreen}
+          startingTime={startingTime}
+          setStartingTime={setStartingTime}
+        />
+      )}
     </>
   );
 }
