@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Timer } from "./components/Timer";
 import { NamesColumn } from "./components/NamesColumn";
 import { NumSetsColumn } from "./components/NumSetsColumn";
+import workouts from "./data/workouts.json";
+import { PresetWorkoutOptionsButtons } from "./components/PresetWorkoutOptionsButtons.jsx";
 
 function App() {
   const [exercises, setExercises] = useState([
@@ -25,6 +27,18 @@ function App() {
           return { ...exercise, numSets: exercise.numSets - 1 };
         }
         return exercise;
+      })
+    );
+  };
+
+  const buildWorkout = (workoutName) => {
+    setExercises(
+      workouts[workoutName].map((exercise) => {
+        return {
+          name: exercise,
+          numSets: 0,
+          id: crypto.randomUUID(),
+        };
       })
     );
   };
