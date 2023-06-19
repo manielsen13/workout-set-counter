@@ -12,6 +12,7 @@ export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
   useEffect(() => {
     if (isEditing) {
       fieldRef.current.focus();
+      fieldRef.current.select();
     }
   }, [isEditing]);
 
@@ -43,13 +44,14 @@ export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
   return (
     <div className="flex justify-between">
       {isEditing ? (
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)} spellCheck="false">
           <input
             type="text"
             value={nameFieldValue}
             onChange={(e) => setNameFieldValue(e.target.value)}
             ref={fieldRef}
             onBlur={(e) => handleBlur(e)}
+            className="text-black"
           ></input>
         </form>
       ) : (
