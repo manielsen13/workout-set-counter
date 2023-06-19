@@ -7,9 +7,7 @@ export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
   const [nameFieldValue, setNameFieldValue] = useState(exercise.name);
   const [isEditing, setIsEditing] = useState(false);
   const fieldRef = useRef(null);
-  //do something with this below
   const saveRef = useRef(null);
-  const editRef = useRef(null);
 
   useEffect(() => {
     if (isEditing) {
@@ -72,7 +70,6 @@ export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
             src={editIcon}
             className="w-6 h-auto select-none"
             onClick={handleEdit}
-            ref={editRef}
             tabIndex="0"
           ></img>
         )}

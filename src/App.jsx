@@ -9,6 +9,8 @@ function App() {
   const [screen, setScreen] = useState("Home");
   const [startingTime, setStartingTime] = useState(1200);
 
+  console.log(exercises);
+
   const incrementNumSets = (exerciseId) => {
     setExercises(
       exercises.map((exercise) => {
@@ -61,6 +63,17 @@ function App() {
     );
   };
 
+  const addExercise = () => {
+    setExercises([
+      ...exercises,
+      {
+        name: `Exercise ${exercises.length + 1}`,
+        id: crypto.randomUUID(),
+        numSets: 0,
+      },
+    ]);
+  };
+
   return (
     <>
       {screen === "Home" && (
@@ -81,6 +94,7 @@ function App() {
           changeExerciseName={changeExerciseName}
           exercises={exercises}
           removeExercise={removeExercise}
+          addExercise={addExercise}
         />
       )}
     </>

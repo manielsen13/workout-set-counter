@@ -9,6 +9,7 @@ export function OptionsMenu({
   exercises,
   changeExerciseName,
   removeExercise,
+  addExercise,
 }) {
   return (
     <>
@@ -28,6 +29,7 @@ export function OptionsMenu({
           exercises={exercises}
           changeExerciseName={changeExerciseName}
           removeExercise={removeExercise}
+          addExercise={addExercise}
         />
       </div>
     </>
