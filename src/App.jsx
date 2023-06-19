@@ -95,6 +95,7 @@ function App() {
           exercises={exercises}
           removeExercise={removeExercise}
           addExercise={addExercise}
+          buildWorkout={buildWorkout}
         />
       )}
     </>
