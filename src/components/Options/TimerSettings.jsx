@@ -19,8 +19,8 @@ export function TimerSettings({ startingTime, setStartingTime }) {
 
   return (
     <>
-      <p>Default Stopwatch Time</p>
-      <div className="flex gap-5 justify-center">
+      <p className="text-2xl">Default Stopwatch Time</p>
+      <div className="flex gap-5 justify-center items-center">
         <img
           src={minusImg}
           className="w-5 h-5 select-none"

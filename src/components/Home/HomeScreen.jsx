@@ -16,24 +16,24 @@ export function HomeScreen({
   return (
     <>
       <button
-        className="absolute select-none right-7 top-6"
+        className="absolute select-none text-xl right-7 top-7"
         onClick={() => setScreen("Options")}
       >
         Options
       </button>
 
       <div className="flex flex-col justify-center mt-24 items-center gap-5">
-        <img src={clockImg} className="w-7 h-auto select-none"></img>
+        <img src={clockImg} className="w-16 h-auto select-none"></img>
         <Timer startingTime={startingTime} />
       </div>
 
-      <div className="flex flex-col justify-center mt-24 gap-10">
+      <div className="flex flex-col justify-center mt-16 gap-10 mb-10">
         <img
           src={dumbbell}
-          className="w-10 h-auto select-none self-center"
+          className="w-20 h-auto select-none self-center"
         ></img>
         {exercises.length > 0 ? (
-          <div className="flex justify-around">
+          <div className="flex justify-between pl-4 pr-4">
             <NamesColumn exercises={exercises} />
             <NumSetsColumn
               exercises={exercises}
@@ -42,7 +42,7 @@ export function HomeScreen({
             />
           </div>
         ) : (
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-8 w-80 self-center">
             <NoExercisesPopup
               buildWorkout={buildWorkout}
               setScreen={setScreen}

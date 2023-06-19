@@ -17,7 +17,7 @@ export function OptionsMenu({
       <img
         src={backArrow}
         onClick={() => setScreen("Home")}
-        className="w-5 h-auto absolute left-7 top-7 select-none"
+        className="w-10 h-auto absolute left-7 top-7 select-none"
       ></img>
 
       <div className="flex flex-col mt-24 items-center gap-5">

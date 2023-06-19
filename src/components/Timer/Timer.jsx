@@ -38,23 +38,26 @@ export function Timer({ startingTime }) {
         {isRunning === false && currentTime !== startingTime && (
           <img
             src={resetImg}
-            className="w-4 h-auto select-none absolute -right-7"
+            className="w-6 h-auto select-none absolute -right-10 top-1 "
             onClick={() => setCurrentTime(startingTime)}
           ></img>
         )}
       </div>
 
       {isRunning === false && currentTime > 0 && (
-        <button className="select-none" onClick={handleStart}>
+        <button
+          className="select-none text-2xl p-2 pl-5 pr-5 bg-customGreen rounded-md"
+          onClick={handleStart}
+        >
           Start
         </button>
       )}
       {isRunning === true && (
         <button
-          className="select-none"
           onClick={() => {
             setIsRunning(false);
           }}
+          className="select-none text-2xl p-2 pl-5 pr-5 bg-customRed rounded-md"
         >
           Stop
         </button>

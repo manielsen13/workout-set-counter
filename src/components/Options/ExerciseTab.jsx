@@ -17,8 +17,11 @@ export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
   }, [isEditing]);
 
   const handleSubmit = (e) => {
-    //add checks in here for is empty and then for the length of characters
     e.preventDefault();
+
+    if (nameFieldValue.length === 0 || nameFieldValue.length > 20) {
+      return;
+    }
     changeExerciseName(exercise.id, nameFieldValue);
     setIsEditing(false);
   };
@@ -29,6 +32,10 @@ export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
   };
 
   const handleSave = () => {
+    if (nameFieldValue.length === 0 || nameFieldValue.length > 20) {
+      fieldRef.current.focus();
+      return;
+    }
     changeExerciseName(exercise.id, nameFieldValue);
     setIsEditing(false);
   };
@@ -42,27 +49,38 @@ export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
   };
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between w-80">
       {isEditing ? (
         <form onSubmit={(e) => handleSubmit(e)} spellCheck="false">
-          <input
-            type="text"
-            value={nameFieldValue}
-            onChange={(e) => setNameFieldValue(e.target.value)}
-            ref={fieldRef}
-            onBlur={(e) => handleBlur(e)}
-            className="text-black"
-          ></input>
+          {nameFieldValue.length === 0 || nameFieldValue.length > 20 ? (
+            <input
+              type="text"
+              value={nameFieldValue}
+              onChange={(e) => setNameFieldValue(e.target.value)}
+              ref={fieldRef}
+              onBlur={(e) => handleBlur(e)}
+              className="text-customBlack text-xl w-52 focus:border-customRed border-solid border-2 focus:outline-none"
+            ></input>
+          ) : (
+            <input
+              type="text"
+              value={nameFieldValue}
+              onChange={(e) => setNameFieldValue(e.target.value)}
+              ref={fieldRef}
+              onBlur={(e) => handleBlur(e)}
+              className="text-customBlack text-xl w-52 focus:border-customBlue border-solid border-2 focus:outline-none"
+            ></input>
+          )}
         </form>
       ) : (
-        <p className="select-none">{exercise.name}</p>
+        <p className="select-none text-xl">{exercise.name}</p>
       )}
 
-      <div className="flex gap-5">
+      <div className="flex gap-5 items-center">
         {isEditing ? (
           <img
             src={saveIcon}
-            className="w-7 h-auto select-none p-1 bg-green-300 rounded-md"
+            className="w-7 h-7 select-none p-1 bg-customGreen rounded-md"
             ref={saveRef}
             tabIndex="0"
             onClick={handleSave}
@@ -70,14 +88,14 @@ export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
         ) : (
           <img
             src={editIcon}
-            className="w-6 h-auto select-none"
+            className="w-6 h-6 select-none"
             onClick={handleEdit}
             tabIndex="0"
           ></img>
         )}
         <img
           src={trashIcon}
-          className="w-5 h-auto select-none"
+          className="w-5 h-6 select-none"
           onClick={() => removeExercise(exercise.id)}
         ></img>
       </div>

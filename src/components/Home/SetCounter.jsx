@@ -17,7 +17,7 @@ export function SetCounter({ exercise, incrementNumSets, decrementNumSets }) {
   };
 
   return (
-    <div className="flex gap-5 justify-center">
+    <div className="flex gap-5 justify-center items-center">
       <img
         src={minusImg}
         className="w-5 h-5 select-none"

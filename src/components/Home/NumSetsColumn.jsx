@@ -6,12 +6,12 @@ export function NumSetsColumn({
   decrementNumSets,
 }) {
   return (
-    <div className="flex flex-col text-center gap-7">
-      <p className="select-none"># Sets Complete</p>
-      <ul className="flex flex-col text-center gap-7">
+    <div className="flex flex-col text-center gap-9">
+      <p className="select-none text-2xl"># Sets Complete</p>
+      <ul className="flex flex-col text-center gap-9 ">
         {exercises.map((exercise) => {
           return (
-            <li key={exercise.id}>
+            <li key={exercise.id} className="text-xl">
               <SetCounter
                 exercise={exercise}
                 incrementNumSets={incrementNumSets}
