@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import workouts from "./data/workouts.json";
-import { PresetWorkoutOptionsButtons } from "./components/Displays/PresetWorkoutOptionsButtons.jsx";
+
 import { OptionsMenu } from "./components/Options/OptionsMenu";
 import { HomeScreen } from "./components/Home/HomeScreen";
 
@@ -41,6 +41,14 @@ function App() {
     );
   };
 
+  const removeExercise = (exerciseId) => {
+    setExercises(
+      exercises.filter((exercise) => {
+        return exercise.id !== exerciseId;
+      })
+    );
+  };
+
   const buildWorkout = (workoutName) => {
     setExercises(
       workouts[workoutName].map((exercise) => {
@@ -72,6 +80,7 @@ function App() {
           setStartingTime={setStartingTime}
           changeExerciseName={changeExerciseName}
           exercises={exercises}
+          removeExercise={removeExercise}
         />
       )}
     </>

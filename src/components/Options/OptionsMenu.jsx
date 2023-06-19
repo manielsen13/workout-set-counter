@@ -8,6 +8,7 @@ export function OptionsMenu({
   setStartingTime,
   exercises,
   changeExerciseName,
+  removeExercise,
 }) {
   return (
     <>
@@ -26,6 +27,7 @@ export function OptionsMenu({
         <WorkoutSettings
           exercises={exercises}
           changeExerciseName={changeExerciseName}
+          removeExercise={removeExercise}
         />
       </div>
     </>

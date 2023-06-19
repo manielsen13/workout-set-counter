@@ -1,6 +1,10 @@
 import { ExerciseTab } from "./ExerciseTab";
 
-export function WorkoutSettings({ changeExerciseName, exercises }) {
+export function WorkoutSettings({
+  changeExerciseName,
+  exercises,
+  removeExercise,
+}) {
   return (
     <>
       <ul className="w-screen flex flex-col gap-10">
@@ -10,6 +14,7 @@ export function WorkoutSettings({ changeExerciseName, exercises }) {
               <ExerciseTab
                 exercise={exercise}
                 changeExerciseName={changeExerciseName}
+                removeExercise={removeExercise}
               />
             </li>
           );

@@ -3,7 +3,7 @@ import trashIcon from "../../assets/trashIcon.png";
 import editIcon from "../../assets/editIcon.png";
 import saveIcon from "../../assets/saveIcon.png";
 
-export function ExerciseTab({ exercise, changeExerciseName }) {
+export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
   const [nameFieldValue, setNameFieldValue] = useState(exercise.name);
   const [isEditing, setIsEditing] = useState(false);
   const fieldRef = useRef(null);
@@ -76,7 +76,11 @@ export function ExerciseTab({ exercise, changeExerciseName }) {
             tabIndex="0"
           ></img>
         )}
-        <img src={trashIcon} className="w-5 h-auto select-none"></img>
+        <img
+          src={trashIcon}
+          className="w-5 h-auto select-none"
+          onClick={() => removeExercise(exercise.id)}
+        ></img>
       </div>
     </div>
   );
