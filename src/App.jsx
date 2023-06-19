@@ -5,11 +5,21 @@ import { OptionsMenu } from "./components/Options/OptionsMenu";
 import { HomeScreen } from "./components/Home/HomeScreen";
 
 function App() {
-  const [exercises, setExercises] = useState([]);
-  const [screen, setScreen] = useState("Home");
-  const [startingTime, setStartingTime] = useState(1200);
+  const [exercises, setExercises] = useState(
+    JSON.parse(window.localStorage.getItem("exercises")) || []
+  );
+  const [screen, setScreen] = useState(
+    window.localStorage.getItem("screen") || "Home"
+  );
+  const [startingTime, setStartingTime] = useState(
+    parseInt(window.localStorage.getItem("startingTime")) || 1200
+  );
 
-  console.log(exercises);
+  useEffect(() => {
+    window.localStorage.setItem("exercises", JSON.stringify(exercises));
+    window.localStorage.setItem("screen", screen);
+    window.localStorage.setItem("startingTime", startingTime.toString());
+  }, [exercises, screen, startingTime]);
 
   const incrementNumSets = (exerciseId) => {
     setExercises(
