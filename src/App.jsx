@@ -30,6 +30,17 @@ function App() {
     );
   };
 
+  const changeExerciseName = (exerciseId, name) => {
+    setExercises(
+      exercises.map((exercise) => {
+        if (exercise.id === exerciseId) {
+          return { ...exercise, name: name };
+        }
+        return exercise;
+      })
+    );
+  };
+
   const buildWorkout = (workoutName) => {
     setExercises(
       workouts[workoutName].map((exercise) => {
@@ -59,6 +70,8 @@ function App() {
           setScreen={setScreen}
           startingTime={startingTime}
           setStartingTime={setStartingTime}
+          changeExerciseName={changeExerciseName}
+          exercises={exercises}
         />
       )}
     </>
