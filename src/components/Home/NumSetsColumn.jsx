@@ -7,7 +7,7 @@ export function NumSetsColumn({
 }) {
   return (
     <div className="flex flex-col text-center gap-9">
-      <p className="select-none text-2xl"># Sets Complete</p>
+      <p className="select-none text-2xl"># Sets</p>
       <ul className="flex flex-col text-center gap-9 ">
         {exercises.map((exercise) => {
           return (
