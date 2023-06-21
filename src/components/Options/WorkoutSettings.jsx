@@ -31,7 +31,7 @@ export function WorkoutSettings({
 
       <img
         src={plusImg}
-        className="w-6 h-auto select-none self-center mt-8 mb-8"
+        className="w-7 h-7 select-none self-center mt-8 mb-8"
         onClick={addExercise}
       ></img>
 

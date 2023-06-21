@@ -23,13 +23,13 @@ export function TimerSettings({ startingTime, setStartingTime }) {
       <div className="flex gap-5 justify-center items-center">
         <img
           src={minusImg}
-          className="w-5 h-5 select-none"
+          className="w-7 h-7 select-none"
           onClick={handleDecreaseStartingTime}
         ></img>
         <TimeDisplay time={startingTime} />
         <img
           src={plusImg}
-          className="w-5 h-5 select-none"
+          className="w-7 h-7 select-none"
           onClick={handleIncreaseStartingTime}
         ></img>
       </div>
