@@ -33,7 +33,7 @@ export function HomeScreen({
           className="w-20 h-auto select-none self-center"
         ></img>
         {exercises.length > 0 ? (
-          <div className="flex justify-between pl-4 pr-4">
+          <div className="flex justify-between pl-4 pr-4 w-96 self-center">
             <NamesColumn exercises={exercises} />
             <NumSetsColumn
               exercises={exercises}
