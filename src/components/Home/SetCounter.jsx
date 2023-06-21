@@ -20,13 +20,13 @@ export function SetCounter({ exercise, incrementNumSets, decrementNumSets }) {
     <div className="flex gap-5 justify-center items-center">
       <img
         src={minusImg}
-        className="w-5 h-5 select-none"
+        className="w-7 h-7 select-none"
         onClick={handleDecreaseSetsButtonPressed}
       ></img>
       <p className="select-none">{exercise.numSets}</p>
       <img
         src={plusImg}
-        className="w-5 h-5 select-none"
+        className="w-7 h-7 select-none"
         onClick={handleIncreaseSetsButtonPressed}
       ></img>
     </div>
