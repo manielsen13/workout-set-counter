@@ -73,7 +73,7 @@ export function ExerciseTab({ exercise, changeExerciseName, removeExercise }) {
           )}
         </form>
       ) : (
-        <p className="select-none text-xl">{exercise.name}</p>
+        <p className="select-none text-xl break-words w-60">{exercise.name}</p>
       )}
 
       <div className="flex gap-5 items-center">

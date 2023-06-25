@@ -1,9 +1,8 @@
 import { Timer } from "../Timer/Timer";
-import { NamesColumn } from "./NamesColumn";
 import { NoExercisesPopup } from "./NoExercisesPopup";
-import { NumSetsColumn } from "./NumSetsColumn";
 import dumbbell from "../../assets/dumbbell.png";
 import clockImg from "../../assets/clock.png";
+import { ExerciseRow } from "./ExerciseRow";
 
 export function HomeScreen({
   exercises,
@@ -33,14 +32,15 @@ export function HomeScreen({
           className="w-20 h-auto select-none self-center"
         ></img>
         {exercises.length > 0 ? (
-          <div className="flex pl-7 pr-7 w-96 self-center justify-between ">
-            <NamesColumn exercises={exercises} />
-            <NumSetsColumn
-              exercises={exercises}
-              incrementNumSets={incrementNumSets}
-              decrementNumSets={decrementNumSets}
-            />
-          </div>
+          exercises.map((exercise) => {
+            return (
+              <ExerciseRow
+                exercise={exercise}
+                incrementNumSets={incrementNumSets}
+                decrementNumSets={decrementNumSets}
+              />
+            );
+          })
         ) : (
           <div className="flex flex-col gap-8 w-80 self-center">
             <NoExercisesPopup
